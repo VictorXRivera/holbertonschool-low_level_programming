@@ -1,8 +1,10 @@
 #include <stdio.h>
+#include "holberton.h"
 
 /**
-  *
-  *
+  * main - program for fizzbuzz
+  * @n: variable
+  * Return: Success
   */
 int main(void)
 {
