@@ -3,7 +3,6 @@
 
 /**
   * main - program for fizzbuzz
-  * @n: variable
   * Return: Success
   */
 int main(void)
