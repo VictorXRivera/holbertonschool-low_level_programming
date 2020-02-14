@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
   * print_diagonal - function that draws a diagonal line
   * @n: parameter
@@ -6,8 +7,10 @@
   */
 void print_diagonal(int n)
 {
-	int lines;
-	int spaces;
+	int lines, spaces;
+
+	if (n <= 0)
+		_putchar('\n');
 
 	for (lines = 0; lines < n; lines++)
 	{
