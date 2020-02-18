@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
-  *
-  *
-  *
+  * puts2 - function to print every other character
+  * @str: parameter
+  * Return: Success
   */
 void puts2(char *str)
 {
