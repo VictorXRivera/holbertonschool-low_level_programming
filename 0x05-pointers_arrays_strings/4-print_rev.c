@@ -7,16 +7,19 @@
   */
 void print_rev(char *s)
 {
-	int count = 0; /*index count of string*/
+	int count = 0;
+	int rev;
 
 	while (s[count] != '\0')
 	{
 		count++;
 	}
-	while (s[count] >= 0)
+	count--;
+	rev = count;
+	while (rev >= 0)
 	{
-		_putchar(s[count]);
-		count--;
+		_putchar(s[rev]);
+		rev--;
 	}
 	_putchar('\n');
 }
