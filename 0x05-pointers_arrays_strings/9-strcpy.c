@@ -1,9 +1,10 @@
 #include "holberton.h"
 
 /**
-  *
-  *
-  *
+  * _strcpy - function to copy string
+  * @src: pointer parameter
+  * @dest: pointer parameter
+  * Return: Success
   */
 char *_strcpy(char *dest, char *src)
 {
@@ -12,6 +13,10 @@ char *_strcpy(char *dest, char *src)
 	while (src[index] != '\0')
 	{
 		dest[index] = src[index];
+		index++;
+	}
+	while (dest[index] != '\0')
+	{
 		index++;
 	}
 	return (dest);
