@@ -17,28 +17,9 @@ void puts_half(char *str)
 	}
 	else if (length % 2 != 0)
 	{
-		for (count = (length - 1) /2; count < length; count++)
+		for (count = (length - 1) / 2; count < length; count++)
 		length = (count - 1) / 2;
 		_putchar(str[count]);
 	}
 	_putchar('\n');
 }
-#include "holberton.h"
-
-/**
-    * _strlen - function to print length of string
-      * @s: parameter
-        * Return: Success
-	  */
-int _strlen(char *s)
-{
-		int count = 0;
-
-			while (*s != '\0')
-					{
-								count++;
-										s++;
-											}
-				return (count);
-}
-
