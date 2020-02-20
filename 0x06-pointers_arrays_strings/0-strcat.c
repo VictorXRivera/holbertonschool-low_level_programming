@@ -4,7 +4,7 @@
   * _strcat - function to cat two strings
   * @dest: pointer parameter
   * @src: pointer parameter
-  * Retun: Success
+  * Return: Success
   */
 char *_strcat(char *dest, char *src)
 {
@@ -14,7 +14,7 @@ char *_strcat(char *dest, char *src)
 	for (hello = 0; dest[hello] != '\0'; ++hello)
 	{}
 
-	for (world = 0; src[world] != '\0'; ++hello, ++world) 
+	for (world = 0; src[world] != '\0'; ++hello, ++world)
 		dest[hello] = src[world];
 
 	dest[hello] = '\0';
