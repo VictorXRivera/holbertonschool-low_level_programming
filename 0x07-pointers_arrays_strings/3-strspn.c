@@ -8,7 +8,7 @@
   */
 unsigned int _strspn(char *s, char *accept)
 {
-	int index1, index2, bytes;
+	int index1, index2;
 
 	for (index1 = 0; s[index1] != ' '; index1++)
 	{
@@ -16,9 +16,11 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (s[index1] == accept[index2])
 			{
-				bytes++;
+				break;
 			}
 		}
+		if (!accept[index2])
+			break;
 	}
-	return (bytes);
+	return (index1);
 }
