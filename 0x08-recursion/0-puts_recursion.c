@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
-  *
-  *
-  *
+  * _puts_recursion - function to print string followed by newline
+  * @s: pointing to string from main func
+  * Return: _putchar string
   */
 void _puts_recursion(char *s)
 {
