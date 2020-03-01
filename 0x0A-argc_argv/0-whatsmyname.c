@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
   * main - function to print it's name followed by newline
@@ -13,5 +12,5 @@ int main(int argc, char **argv)
 	(void)argc;
 
 	printf("%s\n", *argv++);
-	exit(EXIT_SUCCESS);
+	return (0);
 }
