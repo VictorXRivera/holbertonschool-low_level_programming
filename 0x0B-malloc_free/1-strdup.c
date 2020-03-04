@@ -9,10 +9,13 @@
   */
 char *_strdup(char *str)
 {
-	int original_size;
+	int original_size = 0;
 	char *duplicate_str;
 	char *dup_offset;
 
+	if (str == NULL)
+		return (NULL);
+	
 	while (str[original_size] != '\0')
 		original_size++;
 	original_size++;
