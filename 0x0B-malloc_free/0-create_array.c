@@ -10,20 +10,21 @@
   */
 char *create_array(unsigned int size, char c)
 {
-	char *array;
+	char *ptr;
 	unsigned int indexer;
 
-	array = malloc((size + 1) * sizeof(char));
-	if (array == 0)
-	{
+	if (size == 0)
 		return (NULL);
-	}
+
+	ptr = malloc(size * sizeof(char));
+	if (ptr == 0)
+		return (NULL);
+
 	indexer = 0;
 	while (indexer < size)
 	{
-		array[indexer] = c;
+		ptr[indexer] = c;
 		indexer++;
 	}
-	array[indexer] = '\0';
-	return (array);
+	return (ptr);
 }
