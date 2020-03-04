@@ -9,11 +9,22 @@
   */
 char *_strdup(char *str)
 {
-	str = (char *)malloc(100 * sizeof(char));
-	if (*str == '\0')
-	{
-		return (NULL);
-	}
+	int original_size;
+	char *duplicate_str;
+	char *dup_offset;
 
-	return (str);
+	original_size = strlen(str);
+	duplicate_str = (char *)malloc(sizeof(char) * original_size + 1);
+	if (duplicate_str == NULL)
+		return (NULL);
+
+	dup_offset = duplicate_str;
+	while (*str)
+	{
+		*dup_offset = *str;
+		dup_offset++;
+		str++;
+	}
+	*dup_offset = '\0';
+	return (duplicate_str);
 }
