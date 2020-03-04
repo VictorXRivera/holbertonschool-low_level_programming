@@ -15,12 +15,12 @@ char *_strdup(char *str)
 
 	if (str == NULL)
 		return (NULL);
-	
+
 	while (str[original_size] != '\0')
 		original_size++;
 	original_size++;
 
-	duplicate_str = (char *)malloc(sizeof(char) * original_size + 1);
+	duplicate_str = (char *)malloc(sizeof(char) * original_size);
 	if (duplicate_str == NULL)
 		return (NULL);
 
