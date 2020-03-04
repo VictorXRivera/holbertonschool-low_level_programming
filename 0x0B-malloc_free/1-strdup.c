@@ -13,7 +13,10 @@ char *_strdup(char *str)
 	char *duplicate_str;
 	char *dup_offset;
 
-	original_size = strlen(str);
+	while (str[original_size] != '\0')
+		original_size++;
+	original_size++;
+
 	duplicate_str = (char *)malloc(sizeof(char) * original_size + 1);
 	if (duplicate_str == NULL)
 		return (NULL);
