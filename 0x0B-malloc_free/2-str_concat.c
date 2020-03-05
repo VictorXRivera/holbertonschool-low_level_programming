@@ -14,11 +14,6 @@ char *str_concat(char *s1, char *s2)
 	int counter1 = 0, counter2 = 0;
 	char *concat;
 
-	/*if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	*/
 	if (s1 != NULL)
 	{
 		while (s1[len1] != '\0')
@@ -40,10 +35,10 @@ char *str_concat(char *s1, char *s2)
 	if (concat == NULL)
 		return (NULL);
 
-	for (counter1 = 0; s1[counter1]; counter1++)
+	for (counter1 = 0; s1[counter1] != '\0'; counter1++)
 		concat[counter1] = s1[counter1];
 
-	for (counter2 = 0; s2[counter2]; counter2++)
+	for (counter2 = 0; s2[counter2] != '\0'; counter2++)
 		concat[counter1 + counter2] = s2[counter2];
 
 	return (concat);
