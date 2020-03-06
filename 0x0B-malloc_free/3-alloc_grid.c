@@ -29,9 +29,9 @@ int **alloc_grid(int width, int height)
 			{
 				free(doubarray[columns]);
 				free(doubarray);
-				return (NULL);
 			}
 		}
+		return (NULL);
 	}
 	for (rows = 0; rows < height; rows++)
 	{
