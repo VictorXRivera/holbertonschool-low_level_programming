@@ -17,12 +17,12 @@ int **alloc_grid(int width, int height)
 	if (width == 0 || height == 0)
 		return (NULL);
 
-	doubarray = malloc((height * sizeof(int)));
+	doubarray = malloc(height * sizeof(int));
 	if (doubarray == NULL)
 		return (NULL);
 	for (rows = 0; rows < height; rows++)
 	{
-		doubarray[rows] = malloc((width + sizeof(int)));
+		doubarray[rows] = malloc(width + sizeof(int));
 		if (doubarray == NULL)
 		{
 			for (columns = 0; columns < rows; columns++)
