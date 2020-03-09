@@ -2,13 +2,12 @@
 #include <stdio.h>
 
 /**
-  * main - program to print name of file it is compiled from
-  * @argc: count of arguments
-  * @argv: count of strings
-  * Return: Name of program
+  *main - print name of file of program
+  * Return: Name of file
   */
-int main(__attribute__((unused))int argc, char *argv[])
+
+int main(void)
 {
-	printf("%s\n", argv[0]);
+	printf("%s\n", __FILE__);
 	return (0);
 }
