@@ -32,8 +32,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 	doggie->owner = ownercopy;
 	doggie->age = age;
 
-	return(doggie);
+	return (doggie);
 }
+/**
+  * _strdup - function to duplicate string from pointer
+  * @str: Pointer to string being passed into program
+  * Return: Duplicated string
+  */
 char *_strdup(char *str)
 {
 	int original_size = 0;
