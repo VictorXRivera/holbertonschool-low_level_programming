@@ -16,11 +16,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		count = va_arg(list, const unsigned int);
 		printf("%d", count);
-		if (separator == NULL)
+		if (separator == '\0')
 		{
 			separator = "";
 		}
-		else if (separator != NULL)
+		else if (separator != '\0')
 		{
 			printf("%s", separator);
 		}
