@@ -9,17 +9,20 @@
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
 	va_list list;
-	unsigned int i, count;
+	unsigned int i;
+
+	if (separator == NULL)
+		separator = "";
 
 	va_start(list, n);
-	for (i = 0; i < n; i++)
+	for (i = 0; i < n && n != '\0'; i++)
 	{
-		count = va_arg(list, const unsigned int);
-		if (separator == NULL && i == n - 1)
-			printf("%d", count);
-		else
-			printf("%d%s", count, separator);
+		printf("%i", va_arg(list, const unsigned int));
+		if (i < n - 1)
+		{
+			printf("%s", separator);
+		}
 	}
-	printf("\n");
 	va_end(list);
+	printf("\n");
 }
