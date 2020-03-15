@@ -22,10 +22,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			printf("%s", separator);
 		}
-		else if (!(va_arg(list, unsigned int)))
-		{
-			printf("(nil)");
-		}
 	}
 	printf("\n");
 	va_end(list);
