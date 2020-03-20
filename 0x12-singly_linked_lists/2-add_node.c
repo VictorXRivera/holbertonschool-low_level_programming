@@ -20,9 +20,9 @@ list_t *add_node(list_t **head, const char *str)
 	while (dup[counter])
 		++counter;
 
-	temp->next = *head;
 	temp->len = counter;
 	temp->str = dup;
+	temp->next = *head;
 	*head = temp;
 	return (temp);
 }
