@@ -23,7 +23,7 @@ int **alloc_grid(int width, int height)
 	for (rows = 0; rows < height; rows++)
 	{
 		doubarray[rows] = malloc(width * sizeof(int *));
-		if (doubarray == NULL)
+		if (doubarray[rows] == NULL)
 		{
 			for (columns = 0; columns < rows; columns++)
 			{
