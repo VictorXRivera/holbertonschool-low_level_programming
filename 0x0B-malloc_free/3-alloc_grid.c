@@ -30,11 +30,10 @@ int **alloc_grid(int width, int height)
 				free(doubarray);
 				return (NULL);
 		}
-	}
-	for (rows = 0; rows < height; rows++)
-	{
 		for (columns = 0; columns < width; columns++)
+		{
 			doubarray[rows][columns] = 0;
+		}
 	}
 	return (doubarray);
 }
