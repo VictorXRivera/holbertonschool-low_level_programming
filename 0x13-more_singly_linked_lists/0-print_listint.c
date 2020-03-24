@@ -5,14 +5,17 @@
   * @h: Pointer to struct
   * Return: Number of nodes
   */
-size_t print_listint(const listint_t *h);
+size_t print_listint(const listint_t *h)
 {
-	unsigned long int index = 0;
+	size_t index = 0;
+
+	if (h == NULL)
+		return (0);
 
 	while (h)
 	{
-		printf("%i\n", index->n);
-		index = index->next;
+		printf("%d\n", h->n);
+		h = h->next;
 		index++;
 	}
 	return (index);
