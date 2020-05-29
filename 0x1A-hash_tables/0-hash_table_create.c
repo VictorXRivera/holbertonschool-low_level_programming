@@ -19,17 +19,16 @@ hash_table_t *hash_table_create(unsigned long int size)
 	{
 		return (NULL);
 	}
-	
+
 	hash_table->size = size;
 	hash_table->array = (hash_node_t **)malloc(size * sizeof(hash_node_t));
+	
 	if (hash_table->array == NULL)
 	{
-		return (NULL);
+		free(hash_table);
 	}
 
 	memset(hash_table->array, 0, size * sizeof(hash_node_t));
-
-	hash_table->size = size;
-
+	
 	return (hash_table);
 }
