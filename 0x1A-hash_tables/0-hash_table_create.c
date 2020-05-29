@@ -26,9 +26,8 @@ hash_table_t *hash_table_create(unsigned long int size)
 	if (hash_table->array == NULL)
 	{
 		free(hash_table);
+		return (NULL);
 	}
-
-	memset(hash_table->array, 0, size * sizeof(hash_node_t));
 
 	return (hash_table);
 }
