@@ -1,48 +1,50 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_set - function that adds an element to the hash table.
- * @ht: hash table
- * @key: key
- * @value: value
- * Return: 1 on success, 0 on fail
+ * hash_table_set - function that adds an element
+ * to the hash table.
+ * @ht: hash table to update/add to
+ * @key: is the key; cannot be empty str
+ * @value: value associated with key
+ * Return: 1 on success or 0 or error
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int hash;
-	hash_node_t *node;
+	hash_node_t *temp, *head;
+	unsigned long int index;
 
-	if (ht == NULL || ht->array == NULL || ht->size == 0 ||
-			key == NULL || key[0] == '\0')
+	if (key == NULL || ht == NULL || value == NULL || !(*key))
 		return (0);
-
-	hash = hash_djb2((const unsigned char *)key) % ht->size;
-	if (ht->array[hash] && strcmp(ht->array[hash]->key, (char *)key))
+	index = key_index((const unsigned char *) key, ht->size);
+	head = ht->array[index];
+	while (head)
 	{
-		ht->array[hash]->value = strdup(value);
-		if (ht->array[hash]->value == NULL)
-			return (0);
-		return (1);
+		if (strcmp(key, head->key) == 0)
+		{
+			free(head->value);
+			head->value = strdup(value);
+			if (head->value == NULL)
+				return (0);
+			return (1);
+		}
+		head = head->next;
 	}
-
-	node = malloc(sizeof(hash_node_t));
-	if (node == NULL)
+	temp = malloc(sizeof(hash_node_t));
+	if (temp == NULL)
 		return (0);
-	node->key = strdup(key);
-	if (node->key == NULL)
+	temp->value = strdup(value);
+	if (temp->value == NULL && value != NULL)
+		return (0);
+	temp->key = strdup(key);
+	temp->next = NULL;
+	if (ht->array[index] == NULL)
 	{
-		free(node);
-		return (0);
+		ht->array[index] = temp;
 	}
-	node->value = strdup(value);
-	if (node->value == NULL && value != NULL)
+	else
 	{
-		free(node->key);
-		free(node);
-		return (0);
+		temp->next = (ht->array)[index];
+		(ht->array)[index] = temp;
 	}
-	node->next = ht->array[hash];
-	ht->array[hash] = node;
-
 	return (1);
 }
