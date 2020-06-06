@@ -1,45 +1,31 @@
-
 #include "hash_tables.h"
 
 /**
-* hash_table_print - Printing hash table
-* Return: void
-* @ht: hash table
-*/
+ * hash_table_print - print hash table
+ * @ht: hash table
+ * Return: void
+ */
 void hash_table_print(const hash_table_t *ht)
 {
-	unsigned long int index, s;
-	int begin = 0;
+	hash_node_t *temp;
+	unsigned long int index;
+	unsigned long int comma = 1;
 
 	if (ht == NULL)
 		return;
-	s = ht->size;
 	printf("{");
-	for (index = 0; index < s; index++)
+	for (index = 0; index < ht->size; index++)
 	{
-		if (ht_display(ht->array[index], begin) == 1)
+		temp = ht->array[index];
+		while (temp)
 		{
-			begin = 1;
+			if (comma == 0)
+				printf(", ");
+			printf("\'%s\': \'%s\'", temp->key, temp->value);
+			comma = 0;
+			temp = temp->next;
 		}
 	}
 	printf("}\n");
-}
-/**
-* ht_display - prints the linked list in the hash table
-* Return: 1 if anythin printed else 0
-* @node: head node of the list
-* @begin: punc tracker
-*/
-int ht_display(hash_node_t *node, int begin)
-{
-	if (node == NULL)
-		return (0);
-	if (begin == 1)
-		printf(", ");
-	printf("'%s': '%s'", node->key, node->value);
-	if (node->next)
-	{
-		ht_display(node->next, 1);
-	}
-	return (1);
+
 }
