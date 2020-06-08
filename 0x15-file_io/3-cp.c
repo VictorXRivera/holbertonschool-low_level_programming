@@ -48,8 +48,8 @@ int main(int argc, char *argv[])
 /**
 * copy_file - if files exist, copies it
 * Return:1 for success, or error code
-* @from_num: filenumber fd to copy from
-* @to_num: file number to copy to
+* @num1: filenumber fd to copy from
+* @num2: file number to copy to
 * @from: the name of the source file
 * @to: name of the dest file
 */
