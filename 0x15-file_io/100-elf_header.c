@@ -7,6 +7,10 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+/**
+ * main - main program
+ * Return: 98
+ */
 int main(void)
 {
 	return (98);
