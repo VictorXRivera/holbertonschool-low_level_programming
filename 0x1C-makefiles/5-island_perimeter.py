@@ -8,7 +8,7 @@ def island_perimeter(grid):
     W_zone = 0
     L_zone = 0
     for h in range(len(grid)):
-        for b in range(len(grid)):
+        for b in range(len(grid[h])):
             if grid[h][b] == 1:
                 W_zone += 1
                 if h != len(grid) - 1:
